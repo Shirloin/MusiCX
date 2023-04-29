@@ -1,25 +1,31 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
+
+import Template from './pages/Template';
+import Home from './pages/Home';
+import { SearchProvider } from './context/SearchContext';
+import { FavoriteProvider } from './context/FavoriteContext';
+import { SongProvider } from './context/SongContext';
+
+const client = new ApolloClient({
+  uri: 'http://127.0.0.1:8080/query',
+  cache: new InMemoryCache(),
+});
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <SongProvider>
+        <SearchProvider>
+          <FavoriteProvider>
+            <Template/>
+          </FavoriteProvider>
+        </SearchProvider>
+      </SongProvider>
+    </ApolloProvider>
   );
 }
 
