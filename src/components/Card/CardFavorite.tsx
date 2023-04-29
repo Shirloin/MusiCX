@@ -32,7 +32,7 @@ export function CardFavorite({id}: CardFavorite){
     
 
     return (
-        <div className="flex justify-center items-center w-1/6">
+        <div className="flex justify-center items-center w-16 sm:w-1/6">
             <button onClick={handleClick}
             className={
                 isFavorite() ? "":"hidden group-hover:block"

@@ -10,7 +10,8 @@ import { FavoriteProvider } from './context/FavoriteContext';
 import { SongProvider } from './context/SongContext';
 
 const client = new ApolloClient({
-  uri: 'http://127.0.0.1:8080/query',
+  // uri: 'http://127.0.0.1:8080/query',
+  uri: 'https://graphql-spotify-mbee.up.railway.app/query',
   cache: new InMemoryCache(),
 });
 

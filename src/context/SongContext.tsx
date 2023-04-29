@@ -6,6 +6,7 @@ interface Song{
     artist: string;
     image: string;
     url: string;
+    currSong:string;
 }
 
 interface SongContextType{
@@ -19,7 +20,8 @@ export const SongContext = createContext<SongContextType>({
         title: '',
         artist: '',
         image: '',
-        url: ''},
+        url: '',
+        currSong: ''},
     setSong: ()=>{}
 })
 
@@ -34,7 +36,8 @@ export const SongProvider: React.FC<SongProviderProps> = ({children})=>{
         title: '',
         artist: '',
         image: '',
-        url: ''})
+        url: '',
+        currSong: ''})
 
     return (
         <SongContext.Provider value={{song, setSong}}>

@@ -7,27 +7,29 @@ interface Song{
     artist: string;
     image: string;
     url: string;
+    currSong: string;
 }
 
 
-export function Music({id, image, title, artist, url}: Song){
+export function Music({id, image, title, artist, url, currSong}: Song){
 
     const {song, setSong} = useContext(SongContext)
 
     const isPlaying = ()=>{
-        if(song.id==='' || song.id!==id)return false
+        if(song.currSong==='' || song.currSong!==url)return false
         return true
     }
 
     const handleClick = (e:any)=>{
         e.preventDefault()
-        if(id===song.id){
+        if(id===song.id && isPlaying()){
             setSong({
-                id: '',
-                title: '',
-                artist: '',
-                image: '',
-                url: ''})
+                id: id,
+                title: title,
+                artist: artist,
+                image: image,
+                url: url,
+                currSong: ''})
         }
         else{
             setSong({
@@ -35,20 +37,22 @@ export function Music({id, image, title, artist, url}: Song){
                 title: title,
                 artist: artist,
                 image: image,
-                url: url})
+                url: url,
+                currSong: url})
         }
+
     }
     return (
-    <div>
+    <div className="hidden group-hover:flex w-full h-20">
         {
             isPlaying()?(
-                <button className="hidden w-full h-full items-center justify-center group-hover:flex"
+                <button className="w-full h-full items-center justify-center"
                         onClick={handleClick}>
                     <i className="fas fa-pause"></i>
                 </button>
             ):
             (
-                <button className="hidden w-full h-full items-center justify-center group-hover:flex"
+                <button className=" w-full h-full items-center justify-center"
                         onClick={handleClick}>
                     <i className="fas fa-play"></i>
                 </button>

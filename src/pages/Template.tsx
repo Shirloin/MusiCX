@@ -12,10 +12,12 @@ export default function Template(){
     let theme = useContext(ThemeContext)
     return (
         <div className={theme.color}>
-            <div className="w-screen h-screen">
+            <div className="max-w-screen-2xl w-screen h-screen">
                 <div className="flex w-full h-5/6 overflow-y-auto">
-                    <Sidebar/> 
-                    <div className="ml-60 w-full h-full">
+                    <div className="hidden xl:block">
+                        <Sidebar/> 
+                    </div>
+                    <div className="xl:ml-60 w-full h-full">
                         <Navbar />
                         <div className="w-full h-full">
                             <BrowserRouter>

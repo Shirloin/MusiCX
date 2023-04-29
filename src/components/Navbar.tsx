@@ -11,7 +11,7 @@ export function Navbar(){
     }
 
     return (
-        <div className="relative flex justify-center items-center h-20 px-5 py-5 z-10 bg-black w-full">
+        <div className="relative flex justify-center items-center h-20 px-5 py-5 z-10 bg-black w-11/12">
             <div className="sticky top-0 flex items-center h-full w-full">
                 {/* <div className="flex flex-wrap gap-5 text-white text-xl w-full">
                     <a href="" className="flex justify-center items-center rounded-full bg-gray-600 w-10 h-10">
