@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const THEME = {
     light:{
@@ -6,6 +6,9 @@ export const THEME = {
     },
     dark:{
         color: "fixed w-screen h-screen z-10 bg-slate-950"
+    },
+    blur:{
+        color: "fixed w-screen h-screen z-5 bg-opacity-50 backdrop-blur-xl"
     }
 }
 

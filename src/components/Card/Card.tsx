@@ -45,7 +45,7 @@ export function CardContainer({id, image, title, index, album, artist, url}: Car
                         <CardTitle title={title} artist={artist}/>
                     </div>
                 </div>
-                <div className="hidden sm:flex z-10 justify-start items-center sm:w-3/12 md:w-1/3 lg:w-1/3 h-full text-gray-300 overflow-hidden whitespace-nowrap">
+                <div className="hidden sm:flex z-2 justify-start items-center sm:w-3/12 md:w-1/3 lg:w-1/3 h-full text-gray-300 overflow-hidden whitespace-nowrap">
                     {album}
                 </div>
                 <CardFavorite id={id}/>
