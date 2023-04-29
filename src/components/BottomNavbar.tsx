@@ -25,11 +25,23 @@ export function BottomNavbar(){
     }
 
     const onPause = ()=>{
-        song.currSong = ''
+        setSong({
+            id: song.id,
+            title: song.title,
+            artist: song.artist,
+            image: song.image,
+            url: song.url,
+            currSong: ''})
     }
 
     const onPlay = ()=>{
-        song.currSong = song.id
+        setSong({
+            id: song.id,
+            title: song.title,
+            artist: song.artist,
+            image: song.image,
+            url: song.url,
+            currSong: song.url})
     }
 
 
@@ -49,7 +61,7 @@ export function BottomNavbar(){
                 </div>
             </div>
             <div className="flex justify-center items-center w-full text-white sm:w-1/4 p-5">
-                <audio className="w-full" src={song.url} onEnded={onPause} onLoad={onPlay} onPlay={onPlay} onPause={onPause} autoPlay={isPlaying()} controls>
+                <audio className="w-full" src={song.currSong} onEnded={onPause} onLoad={onPlay} onPlay={onPlay} onPause={onPause} autoPlay={isPlaying()} controls>
                 </audio>
             </div>
         </div>

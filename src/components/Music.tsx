@@ -48,7 +48,7 @@ export function Music({id, image, title, artist, url, currSong}: Song){
             isPlaying()?(
                 <button className="w-full h-full items-center justify-center"
                         onClick={handleClick}>
-                    <i className="fas fa-pause"></i>
+                    <i className="fas fa-square"></i>
                 </button>
             ):
             (
