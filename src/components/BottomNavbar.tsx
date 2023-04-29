@@ -23,9 +23,9 @@ export function BottomNavbar(){
     }
 
     return(
-        <div className="fixed bg-neutral-900 w-full h-1/6 bottom-0 flex justify-evenly items-center">
-            <div className="flex items-center">
-                <div className="flex justify-center items-center w-20">
+        <div className="fixed bg-neutral-900 w-full h-1/6 bottom-0 flex justify-start items-center">
+            <div className="p-10 flex items-center absolute">
+                <div className="flex items-center w-20">
                     <CardImage src={song.image}/>
                 </div>
                 <div className="text-white w-96">
@@ -35,7 +35,7 @@ export function BottomNavbar(){
                     </div>
                 </div>
             </div>
-            <div className=" w-full text-white">
+            <div className="flex justify-center items-center w-full text-white">
                 <audio className="" src={song.url} autoPlay={isPlaying()} controls>
                 </audio>
             </div>
