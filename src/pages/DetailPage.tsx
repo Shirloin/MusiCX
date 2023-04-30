@@ -14,7 +14,7 @@ export default function Detail(){
         return <h1 className="text-white">Loading...</h1>
     }
     else if(error){
-        return <h1 className="text-white">Error: {error.message}</h1>
+        return <h1 className="text-white">Refresh Again</h1>
     }
 
     const allAlbums = data.a.albums.concat(data.b.albums).concat(data.c.albums).concat(data.d.albums).concat(data.e.albums);
