@@ -19,11 +19,7 @@ export const FavoriteProvider: React.FC<FavoriteProviderProps> = ({children})=>{
     const [favorite, setFavorite] = useState(()=>{
         let lsv = localStorage.getItem("favorite");
         if(lsv==null){
-            return [
-                "6mkZkeZ9YY11rPzdWgs9eA",
-                "3vcgjaj7fi4TNUgvjDcQ7Z",
-                "553eAXr0YyVOyjbN7b7RBr"
-            ]
+            return []
         }
         else{
             return JSON.parse(lsv);
