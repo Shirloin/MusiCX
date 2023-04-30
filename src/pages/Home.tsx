@@ -8,14 +8,14 @@ import { assertValidSDLExtension } from "graphql/validation/validate";
 
 export default function Home(){
     const {loading, error, data} = useQuery(GET_ALL_SONG);
-
+    
     const {searchTerm} = useContext(SearchContext);
 
     if(loading){
         return <h1 className="text-white">Loading...</h1>
     }
     else if(error){
-        return <h1 className="text-white">Refresh Again</h1>
+        return <h1 className="text-white">Refresh Again </h1>
     }
 
     let count = 0;
