@@ -35,7 +35,7 @@ export function CardFavorite({id}: CardFavorite){
         <div className="flex justify-center items-center w-16 sm:w-1/6">
             <button onClick={handleClick}
             className={
-                isFavorite() ? "":"hidden group-hover:block"
+                isFavorite() ? "":"sm:hidden group-hover:block"
             }>
                 <i className={
                     isFavorite() ? "fas fa-heart text-green-400 text-xl":"far fa-heart text-gray-400 text-xl hover:text-white"
