@@ -15,7 +15,7 @@ export default function Home(){
         return <h1 className="text-white">Loading...</h1>
     }
     else if(error){
-        return <h1 className="text-white">Error: {error.message}</h1>
+        return <h1 className="text-white">Refresh Again</h1>
     }
 
     let count = 0;
