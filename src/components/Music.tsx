@@ -43,21 +43,19 @@ export function Music({id, image, title, artist, url, currSong}: Song){
 
     }
     return (
-    <div className="hidden group-hover:flex w-full h-20">
+    <button className="hidden group-hover:flex w-full h-20" onClick={handleClick}>
         {
             isPlaying()?(
-                <button className="w-full h-full items-center justify-center"
-                        onClick={handleClick}>
+                <button className="w-full h-full items-center justify-center">
                     <i className="fas fa-square"></i>
                 </button>
             ):
             (
-                <button className=" w-full h-full items-center justify-center"
-                        onClick={handleClick}>
+                <button className=" w-full h-full items-center justify-center">
                     <i className="fas fa-play"></i>
                 </button>
             )
         }
-    </div>
+    </button>
     )
 }
