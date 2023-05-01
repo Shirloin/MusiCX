@@ -19,7 +19,12 @@ export default function Detail(){
 
     const allAlbums = data.a.albums.concat(data.b.albums).concat(data.c.albums).concat(data.d.albums).concat(data.e.albums);
     const allTracks = allAlbums.flatMap((album: any) => album.tracks);
-    const filteredTracks = allTracks.filter((track: any) => track.id.includes(id));
+    const filteredAlbums = allAlbums.filter((album:any)=>
+        album.tracks.some((track:any) => track.id.includes(id))
+    )
+    
+    const albumId = filteredAlbums.map((album:any) => album.id);
+    const trackInAlbum = allTracks.filter((track:any) => track.album_id === albumId)
 
     return (
         <div className="flex justify-center items-center w-full h-screen text-white text-xl">

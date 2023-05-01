@@ -27,6 +27,12 @@ export function DetailContainer({id, title, image, artist, album, artistImage, u
     }
     let count = 0;
     const allAlbums = data.a.albums.concat(data.b.albums).concat(data.c.albums).concat(data.d.albums).concat(data.e.albums);
+    const filteredAlbums = allAlbums.filter((album:any)=>
+        album.tracks.some((track:any) => track.id.includes(id))
+    )
+    
+    const albumId = filteredAlbums.map((album:any) => album.id);
+    const tracks = allAlbums.filter((album:any) =>albumId.includes(album.id)).flatMap((album:any)=>album.tracks)
     return (
         <div className="w-full h-full rounded-xl flex flex-col justify-start items-center">
             <div className="bg-gradient-to-b from-green-700 to-gray-900 w-full h-80 flex  items-center py-10">
@@ -51,19 +57,18 @@ export function DetailContainer({id, title, image, artist, album, artistImage, u
             </div>
             <div className="px-5 w-full h-full">
                 {
-                    allAlbums.map((album: any)=>{
-                        return album.tracks.filter((track:any) => 
-                        track.name.toLowerCase().includes(searchTerm.toLowerCase()) && track.name.toLowerCase().includes(title.toLowerCase())).sort(() => Math.random()-0.5).map((track: any) => {
-                            return <CardContainer 
+                    tracks.filter((track:any)=>
+                    track.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    ).map((track:any)=>{
+                        return <CardContainer 
                                 index={count++}
                                 id={track.id}
                                 title={track.name}
-                                image={album.image}
-                                album={album.name}
+                                image={image}
+                                album={album}
                                 url={track.preview_url}
                                 artist=
                                     {[data.a, data.b, data.c, data.d, data.e].find(artist => artist.albums.includes(album))?.name}/>
-                        })
                     })
                 }
             </div>

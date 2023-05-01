@@ -18,13 +18,11 @@ export function CardFavorite({id}: CardFavorite){
     const handleClick = (e: any)=>{
         e.preventDefault();
         if(isFavorite()){
-            console.log("favorite")
             setFavorite((favorite) => favorite.filter(
                 (a) => a !== id
             ))
         } 
         else{
-            console.log("not favorite")
             setFavorite([...favorite, id])
         }
     }
