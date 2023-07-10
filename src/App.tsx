@@ -11,7 +11,8 @@ import { SongProvider } from './context/SongContext';
 
 const client = new ApolloClient({
   // uri: 'http://127.0.0.1:8080/query',
-  uri: 'https://graphql-spotify-mbee.up.railway.app/query',
+  // uri: 'https://graphql-spotify-mbee.up.railway.app/query',
+  uri: 'http://178.128.22.186:8080/query',
   cache: new InMemoryCache(),
 });
 
